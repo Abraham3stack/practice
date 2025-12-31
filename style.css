@@ -486,6 +486,31 @@ html{
         background-color: #dfe2ef;
        }
 
+          /* ===MOBILE SCREENS=== */
+       @media (max-width: 576px){
+        .portfolio-heading{
+          flex-direction: column;
+          align-items: flex-start;
+          gap: 1.5rem;
+          padding: 2rem 1rem;
+        }
+
+        .portfolio-title{
+          width: 100%;
+          font-size: 28px;
+        }
+
+        .portfolio-label{
+          font-size: 18px;
+        }
+
+        .all-works-btn{
+          align-self: flex-start;
+          height: 50px;
+          padding: 0 1.5rem;
+        }
+       }
+
        /* PORTFOLIO GRID */
        .portfolio-grid{
         max-width: 1200px;
