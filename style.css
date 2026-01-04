@@ -106,6 +106,7 @@ html{
      height: auto;
      max-width: 420px;
      border-radius: 50%;
+     object-fit: cover;
     }
 
     /* intro */
