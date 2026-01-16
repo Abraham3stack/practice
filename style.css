@@ -193,7 +193,7 @@ html{
         margin-top: 1.5rem;
         margin-bottom: 1.5rem;
         font-weight: 400;
-        height: 120px;
+        height: auto;
         line-height: 24px;
         text-size-adjust: 100%;
        }
@@ -460,6 +460,28 @@ html{
         text-size-adjust: 100%;
         text-align: left;   
        }
+
+       .project-card img {
+        border-radius: 8px;
+        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+       }
+
+       .project-card h3 a {
+        text-decoration: none;
+         color: #293651;
+       }
+
+       .tech-stack {
+        display: flex;
+        gap: 0.5rem;
+        margin-top: 0.8rem;
+      }
+
+
+      .badge.html { background: #e34c26; }
+      .badge.css  { background: #264de4;}
+      .badge.js   { background: #f0db4f; color: #000; }
+
 
        /* All-works-button */
        .all-works-btn{
