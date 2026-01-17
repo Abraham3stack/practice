@@ -732,172 +732,52 @@ html{
         border-radius: 50%;
        }
 
-       /* TESTIMONIA SECTION */
-       .testimonia-section{
-        padding: 5rem 2rem;
-        /* min-height: 100vh; */
-        max-width: 1200px;
-        margin: auto;
+       /* Journey SECTION (Mobile First */
+       .journey {
+        padding: 4rem 1.5rem;
+        background-color: #f9fafb;
+        text-align: center;
        }
 
-       .testimonia-heading{
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
-        text-align: center;       
-        min-height: 35vh;
-       }
-
-       .testimonia-label{
-        color: #00A78E;
-        font-size: 20px;
+       .section-tag {
+        color: #0aa387;
         font-weight: 600;
-        text-size-adjust: 100%;
+        letter-spacing: 1px;
        }
 
-       .testimonia-title{
-        color: #293651;
-        margin-top: 1rem;
-        font-size: 35px;
-        font-weight: 600;
-        width: 450px;
-        text-size-adjust: 100%;  
+       .section-title {
+        font-size: 2rem;
+        margin: 0.5rem 0;
        }
 
-       /* HIDE RADIOS */
-       input[type="radio"]{
-        display: none;
+       .section-subtitle {
+        max-width: 500px;
+        margin: 0 auto 2.5rem;
+        color: #555;
        }
 
-       /* SLIDER */
-       .slider{
-        overflow: hidden;
-       }
-
-       .slides{
-        display: flex;
-        width: 300%;
-        transition: transform 0.6s ease;
-       }
-
-       /* SLIDE */
-       .slide{
-        width: 100%;
+       .journey-cards {
         display: grid;
-        grid-template-columns: 1fr 1fr;
-        gap: 3rem;
-       }
-
-       /* TESTIMONIA CARDS */
-       .card{
-        display: flex;
+        grid-template-columns: 1fr;
         gap: 1.5rem;
        }
 
-       .card img{
-        width: 90px;
-        height: 90px;
-        object-fit: cover;
-        border-bottom-left-radius: 20px;
-        border-top-left-radius: 20px;
-        border-top-right-radius: 20px;
+       .journey-card {
+        background-color: #fff;
+        padding: 1.5rem;
+        border-radius: 12px;
+        box-shadow: 0 10px 25px rgba(0, 0, 0, 0.05);
        }
 
-       .content h4{
-        margin: 0;
-        color: #2f3a52;
+       .journey-card h3 {
+        color: #0aa387;
+        margin-bottom: 0.5rem;
        }
 
-       .content span{
-        font-size: 0.9rem;
-        color: #6b7280;
-       }
-
-       .heading{
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-       }
-
-       .stars{
-        color: #fbbf24;
-        font-size: 1.1rem;
-       }
-
-       .content p{
-        margin-top: 1rem;
+       .journey-card p {
+        font-size: 0.95rem;
+        color: #444;
         line-height: 1.6;
-        color: #6b7280;
-       }
-
-       /* BULLETS */
-       .bullets{
-        margin-top: 3rem;
-        display: flex;
-        justify-content: center;
-        gap: 1rem;
-       }
-
-       .bullets label{
-        width: 14px;
-        height: 14px;
-        border-radius: 50%;
-        border: 2px solid #00A78E;
-        cursor: pointer;
-       }
-
-       /* ACTIVE BULLET */
-       #slide1:checked ~ .bullets label:nth-child(1),
-       #slide2:checked ~ .bullets label:nth-child(2),
-       #slide3:checked ~ .bullets label:nth-child(3){
-        background-color: #00A78E;
-       }
-
-       /* SLIDE MOVEMENT */
-       #slide1:checked ~ .slider .slides{
-        transform: translateX(0%);
-       }
-
-       #slide2:checked ~ .slider .slides{
-        transform: translateX(-17%);
-       }
-
-       #slide3:checked ~ .slider .slides{
-        transform: translateX(-33.3%);
-       }
-
-       /* ===TESTIMONIALS - MOBILE FIX=== */
-       @media (max-width: 480px){
-        .slider{
-          width: 100%;
-        }
-        .slides{
-          width: 300%;
-        }
-
-        .slide{
-          width: 100%;
-          display: block;
-          padding: 0.15rem;
-        }
-
-        .card{
-          flex-direction: column;
-          align-items: flex-start;
-          gap: 1rem;
-          margin-bottom: 1rem;
-        }
-
-        .card img{
-          width: 80px;
-          height: 80px;
-        }
-
-        .heading{
-          display: flex;
-          gap: 0.3rem;
-        }
        }
 
        /* VARIABLES */
@@ -1187,7 +1067,7 @@ html{
         }
 
         .cta-text h2{
-          font-size: 1.8rem;
+          font-size: 1.6rem;
           line-height: 1.3;
         }
 
@@ -1314,6 +1194,10 @@ html{
       @media (max-width: 768px){
 
         /* TOP NAV */
+        .header h2 {
+          font-size: 20px;
+        }
+
         .top-nav ul{
           position: absolute;
           top: 100%;
@@ -1555,5 +1439,17 @@ html{
           top: 0;
           transform: translate(-50%, 0);
           margin: 0;
+        }
+      }
+
+      @media (min-width: 768px) {
+        .journey-cards{
+          grid-template-columns: repeat(2, 1fr);
+        }
+      }
+
+      @media (min-width: 1024px) {
+        .journey-cards {
+          grid-template-columns: repeat(2, 1fr);
         }
       }
