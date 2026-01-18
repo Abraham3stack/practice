@@ -79,8 +79,8 @@ html{
       color: #00A78E;
     }
 
+    /* Hero Section */
     .hero-section{
-      min-height: 100vh;
       max-width: 1200px;
       margin: auto;
       padding: 5rem 2rem;
@@ -105,7 +105,7 @@ html{
      width: 100%;
      height: auto;
      max-width: 420px;
-     border-radius: 50%;
+     border-radius: 25%;
      object-fit: cover;
     }
 
@@ -161,7 +161,7 @@ html{
        .about-image img{
         width: 100%;
         height: auto;
-        border-radius: 50%;
+        border-radius: 25%;
         object-fit: cover;
         display: block;
        }
@@ -1244,7 +1244,7 @@ html{
         .hero-image img{
          max-width: 260px;
          width: 70%;
-         border-radius: 50%;
+         border-radius: 25%;
         }
 
         .name{
@@ -1399,6 +1399,7 @@ html{
       /* LARGE DEVICES TABLETS */
 
       @media (min-width: 900px){
+
         .timeline{
           position: relative;
           max-width: 1100px;
