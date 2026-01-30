@@ -15,29 +15,32 @@
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
+  <div id="scroll-progress"></div>
 
      <!-- HEADER -->
   <header class="header">
    <h2 class="first-heading">
-    <a href="index.html">Abraham Ogbu .<span class="lancer"> Full-Stack Developer</span></a>
+    <a href="index.html">Abraham .<span class="lancer"> Full-Stack Dev.</span></a>
    </h2>
 
-    <input type="checkbox" id="menu-toggle">
-    <label for="menu-toggle" class="hamburger">
-      &#9776;
-    </label>
+   <div class="hamburger" id="hamburgerBtn">
+    <span></span>
+    <span></span>
+    <span></span>
+   </div>
 
    <nav class="top-nav">    
-    <ul>
+    <ul id="navMenu">
       <li><a href="#Home">Home</a></li>
       <li><a href="#About">About</a></li>
       <li><a href="#Services">Services</a></li>
       <li><a href="#Portfolio">Portfolio</a></li>
       <li><a href="#Pricing">Pricing</a></li>
-      <li><a href="#Experience">Experience</a></li>
       <li><a href="tel:+2348104320170">Contact</a></li>
     </ul>
    </nav>
+
+   <button id="themeToggle" class="theme-toggle" aria-label="Toggle dark mode">🌙</button>
   </header>
 
   <main>
@@ -47,9 +50,11 @@
       <div class="intro">
       <h2 class="hello">Hello! I'm</h2>
       <h2 class="name">Abraham Ogbu</h2>
-      <p class="intro-title">Aspiring Full-Stack Web Developer</p>
+      <p class="intro-title">
+        <span id="typed-text"></span>
+      </p>
       <p class="intro-content">I build responsive websites using HTML and CSS, and I'm currently learning JavaScript to create interactive web experiences.</p>
-      <button class="hire-me-btn">Hire Me</button>
+      <button class="hire-me-btn ripple">Hire Me</button>
       </div>
 
       <div class="hero-image">
@@ -58,7 +63,7 @@
     </section>
 
     <!-- ABOUT SECTION -->
-     <section id="About" class="about-section">
+     <section id="About" class="about-section reveal">
        <div class="about-image">
         <img src="assets/images/Abraham.jpeg" alt="profile picture of Abraham" width="" height="" title="Abraham's profile picture" loading="lazy">
        </div>
@@ -79,11 +84,11 @@
         <!-- UI/UX Design -->
         <div class="about-percentage">
           <p class="designs">UI/UX Design</p>
-          <p class="percent">20%</p>
+          <p class="percent">30%</p>
         </div>
 
         <div class="progress">
-          <div class="progress-fill" style="width: 20%;">
+          <div class="progress-fill" data-progress="30">
             <span class="progress-handle"></span>
           </div>
         </div>
@@ -91,11 +96,11 @@
         <!-- WEB DESIGN -->
         <div class="about-percentage">
           <p class="designs">Web Design</p>
-          <p class="percent">20%</p>
+          <p class="percent">25%</p>
         </div>
 
          <div class="progress">
-          <div class="progress-fill" style="width: 20%;">
+          <div class="progress-fill" data-progress="25">
             <span class="progress-handle"></span>
           </div>
         </div>
@@ -103,11 +108,11 @@
         <!-- HTML/CSS -->
         <div class="about-percentage">
           <p class="designs">HTML/CSS</p>
-          <p class="percent">90%</p>
+          <p class="percent">95%</p>
         </div>
       
         <div class="progress">
-          <div class="progress-fill" style="width: 90%;">
+          <div class="progress-fill" data-progress="95">
             <span class="progress-handle"></span>
           </div>
         </div>
@@ -115,11 +120,11 @@
         <!-- JavaScript -->
         <div class="about-percentage">
           <p class="designs">JavaScript</p>
-          <p class="percent">30%</p>
+          <p class="percent">70%</p>
         </div>
 
          <div class="progress">
-          <div class="progress-fill" style="width: 30%;">
+          <div class="progress-fill" data-progress="70">
             <span class="progress-handle"></span>
           </div>
         </div>
@@ -127,7 +132,7 @@
      </section>
 
       <!-- SERVICES SECTION -->
-     <section id="Services" class="services-section">
+     <section id="Services" class="services-section reveal">
        <div class="services-container1">
         <h3 class="services">Services</h3>
         <h2 class="services-heading">What I Can Help With</h2>
@@ -204,7 +209,7 @@
      </section>
 
      <!-- PORTFOLIO SECTION -->
-     <section id="Portfolio" class="portfolio-section">
+     <section id="Portfolio" class="portfolio-section reveal">
 
       <div class="portfolio-heading">
 
@@ -225,12 +230,44 @@
 
         <!-- ==Login Page == -->
         <article class="project-card">
-          <a href=" https://abraham3stack.github.io/Login_Page/" target="_blank">
+          <div class="project-image">
             <img src="assets/images/login.png" alt="HTML CSS Coding Project" loading="lazy">
-          </a> 
 
-          <h3> <a href=" https://abraham3stack.github.io/Login_Page/" target="_blank">Login Page</a></h3>
+            <div class="overlay">
+              <a href=" https://abraham3stack.github.io/Login_Page/" target="_blank" class="view-btn">View Project</a>
+              <a href="https://github.com/abraham3stack/Login_Page" target="_blank" class="github-btn">
+                <i class="fab fa-github"></i>
+              </a>
+            </div>
+          </div>         
+
+          <h3> <a href="https://abraham3stack.github.io/Login_Page/" target="_blank">Login Page</a></h3>
           <p>A responsive login form with basic validation.</p>
+
+         <div class="tech-stack">
+          <span class="badge html">HTML</span>
+          <span class="badge css">CSS</span>
+          <span class="badge js">JavaScript</span>
+         </div>
+        </article>
+
+         <!-- == TRAVEL WEBSITE == -->
+        <article class="project-card">
+          <div class="project-image">
+            <img src="assets/images/Travel_Website.png" alt="App Landing Page" loading="lazy">
+
+            <div class="overlay">
+              <a href="https://abraham3stack.github.io/Travel-Website/" target="_blank" class="view-btn">View Project</a>
+              <a href="https://github.com/abraham3stack/Login_Page" target="_blank" class="github-btn">
+                <i class="fab fa-github"></i>
+              </a>
+            </div>
+          </div>         
+        
+          <h3> <a href="https://abraham3stack.github.io/Travel-Website/" target="_blank">Travel Website</a></h3>
+          <p>
+            A responsive travel website with a clean layout, modern UI, and smooth interactions.
+          </p>
 
          <div class="tech-stack">
           <span class="badge html">HTML</span>
@@ -241,9 +278,16 @@
 
         <!-- == Calculator UI == -->
         <article class="project-card">
-          <a href=" https://abraham3stack.github.io/Calculator/" target="_blank">
-            <img src="assets/images/calculator.png" alt="Creative Agency Landing Page" loading="lazy">
-          </a>
+          <div class="project-image">
+            <img src="assets/images/calculator.png" alt="HTML CSS Coding Project" loading="lazy">
+
+            <div class="overlay">
+              <a href="https://abraham3stack.github.io/Calculator/" target="_blank" class="view-btn">View Project</a>
+              <a href="https://github.com/abraham3stack/Login_Page" target="_blank" class="github-btn">
+                <i class="fab fa-github"></i>
+              </a>
+            </div>
+          </div>         
           
           <h3> <a href=" https://abraham3stack.github.io/Calculator/" target="_blank">Calculator App</a></h3>
           <p>
@@ -255,25 +299,85 @@
           <span class="badge css">CSS</span>
           <span class="badge js">JavaScript</span>
          </div>
-        </article>
+        </article>      
+      </div>
 
-        <!-- == Registration Form == -->
-        <article class="project-card">
-          <a href="https://abraham3stack.github.io/Registration_Form/" target="_blank">
-             <img src="assets/images/registration-form.png" alt="App Landing Page" loading="lazy">
-          </a>
-         
-          <h3> <a href="https://abraham3stack.github.io/Registration_Form/" target="_blank">Registration Form </a></h3>
+      <!-- HIDDEN PROJECTS -->
+       <!-- REGISTRATION FORM -->
+      <div class="portfolio-grid hidden-projects">
+         <article class="project-card">
+          <div class="project-image">
+            <img src="assets/images/registration-form.png" alt="HTML CSS Coding Project" loading="lazy">
+
+            <div class="overlay">
+              <a href="https://abraham3stack.github.io/Registration_Form/" target="_blank" class="view-btn">View Project</a>
+              <a href="https://github.com/abraham3stack/Login_Page" target="_blank" class="github-btn">
+                <i class="fab fa-github"></i>
+              </a>
+            </div>
+          </div>         
+          
+          <h3> <a href="https://abraham3stack.github.io/Registration_Form/" target="_blank">Registration Form</a></h3>
           <p>
-            A clean registration form layout with structured input fields.
+            A functional calculator UI that performs basic arithmetic operations.
           </p>
 
          <div class="tech-stack">
           <span class="badge html">HTML</span>
           <span class="badge css">CSS</span>
          </div>
-        </article>
-       
+        </article>  
+        
+        <!-- NAME STORAGE SYSTEM -->
+         <article class="project-card">
+          <div class="project-image">
+            <img src="assets/images/Name_storage.png" alt="HTML CSS Coding Project" loading="lazy">
+
+            <div class="overlay">
+              <a href="https://abraham3stack.github.io/Name-Storage-System/" target="_blank" class="view-btn">View Project</a>
+              <a href="https://github.com/abraham3stack/Login_Page" target="_blank" class="github-btn">
+                <i class="fab fa-github"></i>
+              </a>
+            </div>
+          </div>         
+          
+          <h3> <a href="https://abraham3stack.github.io/Name-Storage-System/" target="_blank">Name Storage System</a></h3>
+          <p>
+            A functional calculator UI that performs basic arithmetic operations.
+          </p>
+
+         <div class="tech-stack">
+          <span class="badge html">HTML</span>
+          <span class="badge css">CSS</span>
+          <span class="badge js">JavaScript</span>
+         </div>
+        </article>      
+
+        <!-- MAINTENANCE WEBSITE -->
+         <article class="project-card">
+          <div class="project-image">
+            <img src="assets/images/maintenance_website.png" alt="HTML CSS Coding Project" loading="lazy">
+
+            <div class="overlay">
+              <a href="https://abraham3stack.github.io/CountdownTimer/" target="_blank" class="view-btn">View Project</a>
+              <a href="https://github.com/abraham3stack/Login_Page" target="_blank" class="github-btn">
+                <i class="fab fa-github"></i>
+              </a>
+            </div>
+          </div>         
+          
+          <h3> <a href="https://abraham3stack.github.io/CountdownTimer/" target="_blank">Calculator App</a></h3>
+          <p>
+            A functional calculator UI that performs basic arithmetic operations.
+          </p>
+
+         <div class="tech-stack">
+          <span class="badge html">HTML</span>
+          <span class="badge css">CSS</span>
+          <span class="badge js">JavaScript</span>
+         </div>
+        </article>      
+
       </div>
 
       <div class="portfolio-arrows">
@@ -284,7 +388,7 @@
      </section>
 
      <!-- PRICING SECTION -->
-     <section id="Pricing" class="pricing-section">
+     <section id="Pricing" class="pricing-section reveal">
 
       <div class="pricing-heading">
         <h3 class="pricing-label">Pricing</h3>
@@ -361,7 +465,7 @@
     </section>
 
      <!-- Journey SECTION -->
-      <section class="journey" id="journey">
+      <section class="journey reveal" id="journey">
         <div class="container">
 
           <h5 class="section-tag">Journey</h5>
@@ -391,13 +495,13 @@
       </section>
 
     <!-- STATS SECTION -->
-    <section class="stats-section">
+    <section class="stats-section reveal">
       <div class="stats-container">
 
         <div class="stat">
           <div class="icon">✔</div>
           <div class="text">
-            <h3>3+</h3>
+            <h3 class="counter" data-target="6">0</h3>
             <p>Projects <br>Built</p>
           </div>
         </div>
@@ -405,7 +509,7 @@
         <div class="stat">
           <div class="icon">😊</div>
           <div class="text">
-            <h3>3</h3>
+            <h3 class="counter" data-target="3">0</h3>
             <p>Core Web <br>Technologies</p>
           </div>
         </div>
@@ -413,7 +517,7 @@
         <div class="stat">
           <div class="icon">⚡</div>
           <div class="text">
-            <h3>6+ Weeks</h3>
+            <h3 class="counter counter2" data-target="8">0 Weeks</h3>
             <p>Learning <br>Journey</p>
           </div>
         </div>
@@ -430,7 +534,7 @@
     </section>
 
     <!-- EXPERIENCE SECTION -->
-    <section id="Experience" class="experience-section">
+    <section id="Experience" class="experience-section reveal">
       <div class="experience-heading">
 
        <h3 class="experience-label">Experience</h3>
@@ -498,7 +602,7 @@
   </section>
 
     <!-- Call To action Section -->
-    <section class="cta">
+    <section class="cta reveal">
 
       <div class="cta-inner">
         <div class="cta-text">
@@ -524,7 +628,7 @@
 
       <p class="footer-role">
         <a href="index.html">Abraham Ogbu .<span class="lancer"> Full-Stack Developer (In Progress)</span></a>
-        </p>
+      </p>
 
       <!-- SOCIAL LINKS -->
        <div class="socials">
@@ -567,5 +671,7 @@
 
     </div>  
   </footer>
+
+  <script src="script.js"></script>
 </body>
 </html>
