@@ -24,6 +24,19 @@ toggleBtn.addEventListener("click", () => {
   localStorage.setItem("theme", isDark ? "dark" : "light");
 });
 
+// ===== PAGE LOAD ANIMATION =====
+window.addEventListener("load", () => {
+  document.body.classList.remove("preload");
+
+  const sections = document.querySelectorAll(".page-enter");
+
+  sections.forEach((section, index) => {
+    setTimeout(() => {
+      section.classList.add("page-enter-active");
+    }, index * 120);
+  });
+});
+
 // ===== HEADER =====
 const header = document.querySelector(".header");
 
@@ -44,7 +57,7 @@ window.addEventListener("scroll", () => {
     const sectionTop = section.offsetTop - 120;
     const sectionHeight = section.offsetHeight;
 
-    if (window.scrollY >= screenTop && window.scrollY < sectionTop + sectionHeight) {
+    if (window.scrollY >= sectionTop && window.scrollY < sectionTop + sectionHeight) {
       currentSection = section.getAttribute("id");
     }
   });
@@ -173,3 +186,127 @@ viewAllBtn.addEventListener("click", () => {
   ? "Hide Projects"
   : "View All Projects";
 });
+
+// ===== HIRE ME BUTTON ACTIVATION =====
+document.addEventListener("DOMContentLoaded", () => {
+  const hireMeBtn = document.querySelector(".hire-me-btn");
+  const ctaInner = document.querySelector(".cta-inner");
+
+  if (hireMeBtn && ctaInner) {
+    hireMeBtn.addEventListener("click", () => {
+      ctaInner.scrollIntoView({
+        behavior: "smooth",
+        block: "start"
+      });
+    });
+  }
+});
+
+// ===== PRICE BUTTON ACTION (WITH MESSAGE PREFILL) =====
+const pricingButtons = document.querySelectorAll(".price-card .btn");
+const selectedPlanInput = document.getElementById("selectedPlan");
+const contactSection = document.getElementById("contact");
+const messageField = document.querySelector("textarea[name='message']");
+
+pricingButtons.forEach(button => {
+  button.addEventListener("click", () => {
+    const plan = button.dataset.plan;
+
+      if (plan === "Custom Web App") {
+       contactModal?.classList.add("show");
+       return;
+      }
+
+    if (selectedPlanInput && plan) {
+      selectedPlanInput.value = plan;
+    }
+
+    // Auto-fill msg
+    if (messageField && plan) {
+      if (plan === "Starter Website") {
+        messageField.value = 
+          "Hi Abraham, I'm interested in the Starter Website package. I need a simple, responsive landing page.";
+      }
+
+      if (plan === "Business Website") {
+        messageField.value = 
+          "Hi Abraham, I'm interested in the Business Website package. I need a multi-page website for my business.";
+      }
+    }
+
+    contactSection.scrollIntoView({
+      behavior: "smooth",
+      block: "start"
+    });
+  });
+});
+
+  
+// ===== CONTACT MODAL =====
+const quickContactBtn = document.querySelector(".quick-contact-btn");
+const contactModal = document.getElementById("contactModal");
+const closeModalBtn = document.querySelector(".close-modal");
+
+if (quickContactBtn && contactModal) {
+  quickContactBtn.addEventListener("click", () => {
+    contactModal.classList.add("show");
+  });
+}
+
+if (closeModalBtn) {
+  closeModalBtn.addEventListener("click", () => {
+    contactModal.classList.remove("show");
+  });
+}
+
+contactModal?.addEventListener("click", (e) => {
+  if (e.target === contactModal) {
+    contactModal.classList.remove("show");
+  }
+});
+
+// ===== EMAILJS FORM SUBMIT =====
+(function () {
+  emailjs.init("0jcX39JydDUietKbl")
+})();
+
+// ===== CTA FORM SUBMIT =====
+ const  contactForm = document.getElementById("contactForm");
+ const statusMessage = document.querySelector(".form-status");
+ const submitBtn = document.querySelector(".cta-btn");
+
+ if (contactForm && submitBtn && statusMessage) {
+  contactForm.addEventListener("submit", (e) => {
+    e.preventDefault();
+
+    submitBtn.classList.add("loading");
+    submitBtn.textContent = "Sending...";
+    statusMessage.textContent = "";
+    statusMessage.className = "form-status";
+
+    emailjs.sendForm(
+      "service_o4dx2em",
+      "template_xkyo4ee",
+      contactForm
+    )
+    .then(() => {
+      statusMessage.textContent = "Message sent successfully! I'll get back to you soon.";
+      statusMessage.className = "form-status";
+      void statusMessage.offsetWidth;
+      statusMessage.classList.add("success");
+
+      contactForm.reset();
+    })
+    .catch((error) => {
+      statusMessage.textContent = "Something went wrong. Please try again.";
+      statusMessage.className = "form-status";
+      void statusMessage.offsetWidth;
+      statusMessage.classList.add("error");
+    })
+    .finally(() => {
+      submitBtn.classList.remove("loading");
+      submitBtn.textContent = "Send Message";
+    });
+  });
+ }
+

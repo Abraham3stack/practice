@@ -14,7 +14,7 @@
  />
   <link rel="stylesheet" href="style.css">
 </head>
-<body>
+<body class="preload">
   <div id="scroll-progress"></div>
 
      <!-- HEADER -->
@@ -31,12 +31,12 @@
 
    <nav class="top-nav">    
     <ul id="navMenu">
-      <li><a href="#Home">Home</a></li>
-      <li><a href="#About">About</a></li>
-      <li><a href="#Services">Services</a></li>
-      <li><a href="#Portfolio">Portfolio</a></li>
-      <li><a href="#Pricing">Pricing</a></li>
-      <li><a href="tel:+2348104320170">Contact</a></li>
+      <li><a href="#home" class="nav-link">Home</a></li>
+      <li><a href="#about" class="nav-link">About</a></li>
+      <li><a href="#services" class="nav-link">Services</a></li>
+      <li><a href="#portfolio" class="nav-link">Portfolio</a></li>
+      <li><a href="#pricing" class="nav-link">Pricing</a></li>
+      <li><a href="#contact" class="nav-link">Contact</a></li>
     </ul>
    </nav>
 
@@ -46,7 +46,7 @@
   <main>
 
     <!-- HERO-SECTION -->
-    <section id="Home" class="hero-section">
+    <section id="home" class="hero-section page-enter">
       <div class="intro">
       <h2 class="hello">Hello! I'm</h2>
       <h2 class="name">Abraham Ogbu</h2>
@@ -63,7 +63,7 @@
     </section>
 
     <!-- ABOUT SECTION -->
-     <section id="About" class="about-section reveal">
+     <section id="about" class="about-section reveal page-enter">
        <div class="about-image">
         <img src="assets/images/Abraham.jpeg" alt="profile picture of Abraham" width="" height="" title="Abraham's profile picture" loading="lazy">
        </div>
@@ -132,7 +132,7 @@
      </section>
 
       <!-- SERVICES SECTION -->
-     <section id="Services" class="services-section reveal">
+     <section id="services" class="services-section reveal page-enter">
        <div class="services-container1">
         <h3 class="services">Services</h3>
         <h2 class="services-heading">What I Can Help With</h2>
@@ -209,7 +209,7 @@
      </section>
 
      <!-- PORTFOLIO SECTION -->
-     <section id="Portfolio" class="portfolio-section reveal">
+     <section id="portfolio" class="portfolio-section reveal page-enter">
 
       <div class="portfolio-heading">
 
@@ -388,7 +388,7 @@
      </section>
 
      <!-- PRICING SECTION -->
-     <section id="Pricing" class="pricing-section reveal">
+     <section id="pricing" class="pricing-section reveal page-enter">
 
       <div class="pricing-heading">
         <h3 class="pricing-label">Pricing</h3>
@@ -419,7 +419,9 @@
           <li class="no">Database</li>
          </ul>
 
-         <button class="btn outline">Request Starter Site</button>
+         <button class="btn outline" data-plan="Starter Website">
+          Request Starter Site
+         </button>
         </div>
 
         <!-- Business Website -->
@@ -440,7 +442,9 @@
           <li class="no">Advanced backend</li>
          </ul>
 
-         <button class="btn filled">Request Website</button>
+         <button class="btn filled" data-plan="Business Website">
+          Request Website
+         </button>
         </div>
 
         <!-- Custom Web App (Learning Stage) -->
@@ -459,13 +463,15 @@
           <li class="yes">Open to internships & junior roles</li>
          </ul>
 
-         <button class="btn outline">Discuss Project</button>
+         <button class="btn outline" data-plan="Custom Web App">
+          Discuss Project
+         </button>
         </div>
       </div>
     </section>
 
      <!-- Journey SECTION -->
-      <section class="journey reveal" id="journey">
+      <section class="journey reveal page-enter" id="journey">
         <div class="container">
 
           <h5 class="section-tag">Journey</h5>
@@ -495,7 +501,7 @@
       </section>
 
     <!-- STATS SECTION -->
-    <section class="stats-section reveal">
+    <section class="stats-section reveal page-enter">
       <div class="stats-container">
 
         <div class="stat">
@@ -534,7 +540,7 @@
     </section>
 
     <!-- EXPERIENCE SECTION -->
-    <section id="Experience" class="experience-section reveal">
+    <section id="Experience" class="experience-section reveal page-enter">
       <div class="experience-heading">
 
        <h3 class="experience-label">Experience</h3>
@@ -602,7 +608,7 @@
   </section>
 
     <!-- Call To action Section -->
-    <section class="cta reveal">
+    <section id="contact" class="cta reveal page-enter">
 
       <div class="cta-inner">
         <div class="cta-text">
@@ -617,8 +623,26 @@
           </p>
         </div>
 
-        <a href="#" class="cta-btn">Contact Me</a>
+        <!-- CTA FORM -->
+         <form id="contactForm" class="contact-form">
+          <input type="text" name="name" placeholder="Your Name" required>
+          <input type="email" name="email" placeholder="Your Email" required>
+          <textarea name="message" placeholder="Tell me about your project" rows="4"></textarea>
 
+          <!-- HIDDEN -->
+           <input type="hidden" id="selectedPlan" name="plan">
+           <p class="form-status" aria-live="polite"></p>
+
+           <div class="cta-actions">
+            <button type="submit" class="cta-btn">
+              Send Message
+            </button>
+
+            <button class="cta-btn quick-contact-btn" type="button">
+              Quick Contact
+            </button>
+           </div>
+         </form>
       </div>
     </section>
   </main>
@@ -657,12 +681,12 @@
 
         <!-- NAVIGATION -->
          <nav class="footer-nav">
-          <a href="#Home">Home</a>
-          <a href="#About">About</a>
-          <a href="#Services">Services</a>
-          <a href="#Portfolio">Portfolio</a>
-          <a href="#Pricing">Pricing</a>
-          <a href="tel:+2348104320170">Contact</a>
+          <a href="#home">Home</a>
+          <a href="#about">About</a>
+          <a href="#services">Services</a>
+          <a href="#portfolio">Portfolio</a>
+          <a href="#pricing">Pricing</a>
+          <a href="#contact">Contact</a>
          </nav>
 
          <p class="footer-credit">
@@ -671,6 +695,32 @@
 
     </div>  
   </footer>
+
+  <!-- CONTACT OPTION MODAL -->
+  <div class="contact-modal" id="contactModal">
+    <div class="contact-modal-content">
+      <button class="close-modal" aria-label="Close modal">&times</button>
+
+      <h3>Contact Me</h3>
+      <p>Choose how you'd like to contact me:</p>
+
+      <div class="contact-actions">
+        <a href="https://wa.me/2348104320170" target="_blank" class="contact-btn whatsapp">
+          Whatsapp
+        </a>
+
+        <a href="mailto:ogbuabraham39@gmail.com" target="_blank" class="contact-btn email">
+          Email
+        </a>
+
+        <a href="tel:+2348104320170" class="contact-btn call">
+          Call
+        </a>
+      </div>
+    </div>
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/emailjs-com@3/dist/email.min.js"></script>
 
   <script src="script.js"></script>
 </body>
